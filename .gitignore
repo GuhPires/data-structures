@@ -6,4 +6,4 @@ out/
 *.iml
 
 # Other
-Main.java
+src/Main.java
