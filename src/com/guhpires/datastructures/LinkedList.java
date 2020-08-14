@@ -42,6 +42,7 @@ public class LinkedList<T> {
         Node deleted = this.head;
         this.head = deleted.next;
         deleted = null;
+        this.size--;
     }
 
     public Node getHead() { return this.head; }
