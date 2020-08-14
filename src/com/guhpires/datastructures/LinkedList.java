@@ -1,5 +1,15 @@
 package com.guhpires.datastructures;
 
+/*
+* This is a simple implementation of a Singly Linked List in Java.
+* In this particular implementation addition and deletion are done into the head, this means that
+* it basically works as a Stack (LIFO).
+*
+* Author: GuhPires
+* Visit: https://github.com/GuhPires/data-structures
+* ---- Feel completely free to modify this code and give me suggestions! ----
+* */
+
 public class LinkedList<T> {
     private int size = 0;
     private Node head = null;
