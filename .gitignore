@@ -4,3 +4,6 @@ out/
 # IDE
 .idea/
 *.iml
+
+# Other
+Main.java
