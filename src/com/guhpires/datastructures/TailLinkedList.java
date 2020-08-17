@@ -15,6 +15,7 @@ public class TailLinkedList<T> {
     private Node head = null;
     private Node tail = null;
 
+    // Creating the node
     public class Node<T> {
         private T data;
         private Node next;
@@ -23,15 +24,25 @@ public class TailLinkedList<T> {
             this.next = n;
         }
 
+        // Retrieve the Node's data
+        // Time complexity: O(1)
         public T peek() { return this.data; }
 
+        // Pointer to the next Node
+        // Time complexity: O(1)
         public Node next() { return this.next; }
     }
 
+    // Returns the Linked List size
+    // Time complexity: O(1)
     public int size() { return this.size; }
 
+    // Returns if the Linked List is empty
+    // Time complexity: O(1)
     public boolean isEmpty() { return size() == 0; }
 
+    // Add new Node as the new head (add to the head)
+    // Time complexity: O(1)
     public void addToHead(T element) {
         Node node = new Node(element, this.head);
         this.head = node;
@@ -39,6 +50,8 @@ public class TailLinkedList<T> {
         this.size++;
     }
 
+    // Add new Node as the new Tail (add to the tail)
+    // Time complexity: O(1)
     public void addToTail(T element) {
         Node node = new Node(element, null);
         if(isEmpty()){
@@ -50,6 +63,8 @@ public class TailLinkedList<T> {
         this.size++;
     }
 
+    // Delete the head Node
+    // Time complexity: O(1)
     public void removeFirst() {
         if(isEmpty()) throw new RuntimeException("The Linked List is empty.");
         Node deleted = this.head;
@@ -62,6 +77,8 @@ public class TailLinkedList<T> {
         this.size--;
     }
 
+    // Delete the tail Node
+    // Time complexity: O(n)
     public void removeLast() {
         if(isEmpty()) throw new RuntimeException("The Linked List is empty.");
         Node deleted = this.tail;
@@ -82,10 +99,16 @@ public class TailLinkedList<T> {
         this.size--;
     }
 
+    // Returns the Linked List's head
+    // Time complexity: O(1)
     public Node getHead() { return this.head; }
 
+    // Returns the Linked List's tail
+    // Time complexity: O(1)
     public Node getTail() { return this.tail; }
 
+    // Prints the Linked List's Nodes
+    // Time complexity: O(n)
     public void print() {
         Node node = this.head;
         while(node != null) {
