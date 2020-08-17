@@ -14,6 +14,7 @@ public class LinkedList<T> {
     private int size = 0;
     private Node head = null;
 
+    // Creating the node
     public class Node<T> {
         private T data;
         private Node<T> next;
@@ -22,21 +23,33 @@ public class LinkedList<T> {
             this.next = n;
         }
 
+        // Retrieve the Node's data
+        // Time complexity: O(1)
         public T peek() { return this.data; }
 
+        // Pointer to the next Node
+        // Time complexity: O(1)
         public Node next() { return this.next; }
     }
 
+    // Returns the Linked List size
+    // Time complexity: O(1)
     public int size() { return this.size; }
 
+    // Returns if the Linked List is empty
+    // Time complexity: O(1)
     public boolean isEmpty() { return size() == 0; }
 
+    // Add new Node as the new head (add to the head)
+    // Time complexity: O(1)
     public void add(T element) {
         Node node = new Node(element, this.head);
         this.head = node;
         this.size++;
     }
 
+    // Delete the head Node
+    // Time complexity: O(1)
     public void remove() {
         if(isEmpty()) throw new RuntimeException("The Linked List is empty.");
         Node deleted = this.head;
@@ -45,8 +58,12 @@ public class LinkedList<T> {
         this.size--;
     }
 
+    // Returns the Linked List's head
+    // Time complexity: O(1)
     public Node getHead() { return this.head; }
 
+    // Prints the Linked List's Nodes
+    // Time complexity: O(n)
     public void print() {
         Node node = this.head;
         while(node != null) {
