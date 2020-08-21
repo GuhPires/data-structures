@@ -48,8 +48,9 @@ public class DoublyLinkedList<T> {
     // Time complexity: O(1)
     public void addToHead(T element) {
         Node node = new Node(element, this.head, null);
-        this.head = node;
         if(isEmpty()) this.tail = node;
+        else this.head.prev = node;
+        this.head = node;
         this.size++;
     }
 
@@ -57,12 +58,9 @@ public class DoublyLinkedList<T> {
     // Time complexity: O(1)
     public void addToTail(T element) {
         Node node = new Node(element, null, this.tail);
-        if(isEmpty()){
-            this.tail = this.head = node;
-        } else {
-            this.tail.next = node;
-            this.tail = node;
-        }
+        if(isEmpty()) this.head = node;
+        else this.tail.next = node;
+        this.tail = node;
         this.size++;
     }
 
